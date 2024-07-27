@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    <category>
+        <!-- * = replacement for any word the user types -->
+        <pattern>*</pattern>
+        <!-- star = display whatever the * equals -->
+        <template> <star/> </template>
+    </category>
+    
+    <!-- Category = grouping of code -->
+  <category>
+      <!-- pattern = question you want to ask -->
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <!-- template = chatbot's repsonse -->
+    <template>My name is wgubot!</template>
+  </category>
+</aiml>
