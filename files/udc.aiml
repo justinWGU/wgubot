@@ -3,16 +3,91 @@
     
     <category>
         <!-- * = replacement for any word the user types -->
-        <pattern>*</pattern>
+        <pattern>* CALIFORNIA *</pattern>
         <!-- star = display whatever the * equals -->
-        <template> <star/> </template>
+        <template> <star index="1"/> <star index="2"/> </template>
     </category>
     
-    <!-- Category = grouping of code -->
+  <!-- default HI reponse -->
   <category>
-      <!-- pattern = question you want to ask -->
-    <pattern>WHAT IS YOUR NAME</pattern>
-    <!-- template = chatbot's repsonse -->
-    <template>My name is wgubot!</template>
+      <pattern>HI</pattern>
+      <template>
+          <random>
+              <li>Hi, I am wgubot!</li>
+              <li>Hello there, I am wgubot!</li>
+              <li>Hey friend, I am wgubot!</li>
+          </random>
+      </template>
   </category>
+  
+  
+  <category><!-- default what is your name reponse --> <!-- Category = grouping of code -->
+    <pattern>WHAT IS YOUR NAME</pattern> <!-- pattern = question the user asks -->
+    <template>My name is wgubot!</template><!-- template = chatbot's repsonse -->
+  </category>
+  
+  <category><!-- what is your name response after saying hi -->
+      <pattern>WHAT IS YOUR NAME</pattern>
+      <that>Hi, I am wgubot!</that>
+      <template>My name is wgubot, an assistant to help computer science students choose their future careers</template>
+  </category>
+  
+  <category>
+      <pattern>WHO ARE YOU</pattern>
+      <template><srai>WHAT IS YOUR NAME</srai></template><!-- srai tag refers to another pattern --><!-- pattern to refer goes in the srai tags -->
+  </category>
+  
+  <category>
+      <pattern>MY NAME IS *</pattern>
+      <template>
+        <think>
+            <set name="username"><star/></set>
+            </think>
+            nice to meet you, <get name="username"></get>
+       </template>
+  </category>
+  
+  <category>
+      <pattern>MY FAVORITE COLOR IS *</pattern>
+      <template>
+            <think>
+              <set name="color"><star/></set>
+            </think>
+            I will remember that your favorite color is <get name="color"></get>.
+      </template>
+  </category>
+  
+  <category>
+      <pattern>WHAT IS MY FAVORITE COLOR</pattern>
+      <template>
+          <condition name="color">
+              <li value="red">Your favorite color is red</li>
+              <li value="blue">Your favorite color is blue</li>
+              <li>IDK your fav color</li>
+          </condition>
+      </template>
+  </category>
+  
+  <!-- Topic: greetings -->
+    <topic name="greetings">
+        <category>
+            <pattern>HOW ARE YOU</pattern>
+            <template>I am good, thank you! How can I help you today?</template>
+        </category>
+        <category>
+            <pattern>WHAT IS YOUR NAME</pattern>
+            <template>My name is wgubot! What's yours?</template>
+        </category>
+        <category>
+            <pattern>BYE</pattern>
+            <template>
+                Goodbye! Have a great day!
+                <think>
+                    <set name="topic">default</set>
+                </think>
+            </template>
+        </category>
+    </topic>
+
+  
 </aiml>
