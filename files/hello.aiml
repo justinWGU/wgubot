@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+	
+	<!-- Different greetings -->
+	<category>
+      <pattern>HI</pattern>
+      <template>
+          <random>
+              <li>Hi, I am wgubot. How can I help you choose your future job?</li>
+              <li>Hello there, I am wgubot. How can I help you decide what job to pursure after you graduate?</li>
+              <li>Hey, I am wgubot. How can I help you decide on your future career?/</li>
+          </random>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>START</pattern>
+      <template><srai>HI</srai></template>
+  </category>
+  
+  <category>
+      <pattern>HELLO</pattern>`
+      <template><srai>HI</srai></template>
+  </category>
+  
+  <category>
+      <pattern>HEY</pattern>
+      <template><srai>HI</srai></template>
+  </category>
 </aiml>
