@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+    <topic name="info">
+        <!-- Capture user's strength -->
+        <category>
+            <pattern>MY STRENGTH IS *</pattern>
+            <template>
+                <think>
+                    <set name="strength"><star></star></set>
+                </think>
+                <condition name="strength">
+                    <li value="Analytical skills">Thanks! Now that I know your best strength is <get name="strength" />, do you prefer working with Business of IT or Cybersecurity?</li>
+                    <li value="Programming">Thanks! Now that I know your best strength is <get name="strength" />, do you prefer developing Software or Databases?</li>
+                    <li value="Networking">Thanks! Now that I know your best strength is <get name="strength" />, do you prefer working with Cybersecurity or Computer Hardware?</li>
+                    <li>Please type "My strength is [Strength]." Ex: "My strength is Analytical skills"</li>
+                </condition>
+            </template>
+        </category>
+
+        <!-- Capture user's preference -->
+        <category>
+            <pattern>MY PREFERENCE IS *</pattern>
+            <template>
+                <think>
+                    <set name="preference"><star></star></set>
+                </think>
+                <srai>JOB SUGGESTIONS</srai>
+            </template>
+        </category>
+    </topic>
 </aiml>

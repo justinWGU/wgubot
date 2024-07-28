@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+    <topic name="info">
+        <!-- Provide job suggestions based on user's preferences and strengths -->
+        <category>
+            <pattern>JOB SUGGESTIONS</pattern>
+            <template>
+                <condition name="strength" value="Analytical skills">
+                    <condition name="preference">
+                        <li value="Business of IT">Based on your strength in Analytical skills and preference for Business of IT, I recommend a job as a Business Analyst.</li>
+                        <li value="Cybersecurity">Based on your strength in Analytical skills and preference for Cybersecurity, I recommend a job as a Cybersecurity Analyst.</li>
+                    </condition>
+                </condition>
+                <condition name="strength" value="Programming">
+                    <condition name="preference">
+                        <li value="Software">Based on your strength in Programming and preference for Software, I recommend a job as a Software Developer.</li>
+                        <li value="Databases">Based on your strength in Programming and preference for Databases, I recommend a job as a Database Developer.</li>
+                    </condition>
+                </condition>
+                <condition name="strength" value="Networking">
+                    <condition name="preference">
+                        <li value="Cybersecurity">Based on your strength in Networking and preference for Cybersecurity, I recommend a job as a Network Security Specialist.</li>
+                        <li value="Computer Hardware">Based on your strength in Networking and preference for Computer Hardware, I recommend a job as a Hardware Engineer.</li>
+                    </condition>
+                </condition>
+            </template>
+        </category>
+
+        <!-- Handle invalid combinations -->
+        <category>
+            <pattern>INVALID COMBINATION</pattern>
+            <template>
+                I'm sorry, I couldn't find a suitable job suggestion based on your inputs. Please try again with different strengths or preferences.
+            </template>
+        </category>
+    </topic>
 </aiml>

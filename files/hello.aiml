@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	
-	<!-- Different greetings -->
-	<category>
-      <pattern>HI</pattern>
-      <template>
-          <random>
-              <li>Hi, I am wgubot. How can I help you choose your future job?</li>
-              <li>Hello there, I am wgubot. How can I help you decide what job to pursure after you graduate?</li>
-              <li>Hey, I am wgubot. How can I help you decide on your future career?/</li>
-          </random>
-      </template>
-  </category>
-  
-  <category>
-      <pattern>START</pattern>
-      <template><srai>HI</srai></template>
-  </category>
-  
-  <category>
-      <pattern>HELLO</pattern>`
-      <template><srai>HI</srai></template>
-  </category>
-  
-  <category>
-      <pattern>HEY</pattern>
-      <template><srai>HI</srai></template>
-  </category>
+    <!-- Different greetings -->
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <random>
+                <li>Hi, I am wgubot. Would you like help choosing your future job?</li>
+                <li>Hello there, I am wgubot. Would you like help deciding on what job to pursue after you graduate?</li>
+                <li>Hey, I am wgubot. Would you like help deciding on your future career?</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>START</pattern>
+        <template><srai>HI</srai></template>
+    </category>
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template><srai>HI</srai></template>
+    </category>
+
+    <category>
+        <pattern>HEY</pattern>
+        <template><srai>HI</srai></template>
+    </category>
+
+    <category>
+        <pattern>YES</pattern>
+        <template>
+            Sounds great. Identify what your best strength is from the following list: Analytical skills, Programming, Networking.
+            <think>
+                <set name="topic">info</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <template>No problem. Just type "Hello" when you are ready!</template>
+    </category>
 </aiml>
