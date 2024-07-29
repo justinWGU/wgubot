@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     <topic name="info">
+        
         <!-- Provide job suggestions based on user's preferences and strengths -->
         <category>
             <pattern>JOB SUGGESTIONS</pattern>
@@ -9,29 +10,28 @@
                     <condition name="preference">
                         <li value="Business of IT">Based on your strength in Analytical skills and preference for Business of IT, I recommend a job as a Business Analyst.</li>
                         <li value="Cybersecurity">Based on your strength in Analytical skills and preference for Cybersecurity, I recommend a job as a Cybersecurity Analyst.</li>
+                        <li><srai>INVALID CATEGORY</srai></li>
                     </condition>
                 </condition>
                 <condition name="strength" value="Programming">
                     <condition name="preference">
                         <li value="Software">Based on your strength in Programming and preference for Software, I recommend a job as a Software Developer.</li>
                         <li value="Databases">Based on your strength in Programming and preference for Databases, I recommend a job as a Database Developer.</li>
+                        <li><srai>INVALID CATEGORY</srai></li>
                     </condition>
                 </condition>
                 <condition name="strength" value="Networking">
                     <condition name="preference">
-                        <li value="Cybersecurity">Based on your strength in Networking and preference for Cybersecurity, I recommend a job as a Network Security Specialist.</li>
-                        <li value="Computer Hardware">Based on your strength in Networking and preference for Computer Hardware, I recommend a job as a Hardware Engineer.</li>
+                        <li value="Cybersecurity">Based on your strength in Networking and preference for Cybersecurity, I recommend a job as a Network Cybersecurity Analyst.</li>
+                        <li value="Computer Hardware">Based on your strength in Networking and preference for Computer Hardware, I recommend a job as a Network Engineer.</li>
+                        <li><srai>INVALID CATEGORY</srai></li>
                     </condition>
                 </condition>
             </template>
         </category>
-
-        <!-- Handle invalid combinations -->
         <category>
-            <pattern>INVALID COMBINATION</pattern>
-            <template>
-                I'm sorry, I couldn't find a suitable job suggestion based on your inputs. Please try again with different strengths or preferences.
-            </template>
+            <pattern>INVALID CATEGORY</pattern>
+            <template>I am sorry. I could not find a match with that combinatino. Please choose a preference from the list I provided. </template>
         </category>
     </topic>
 </aiml>

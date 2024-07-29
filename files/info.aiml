@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     <topic name="info">
+        
         <!-- Capture user's strength -->
         <category>
             <pattern>MY STRENGTH IS *</pattern>
@@ -16,6 +17,37 @@
                 </condition>
             </template>
         </category>
+        
+        <!-- Different types of answers for MY STRENGTH IS *-->
+        <category>
+        <pattern>ANALYTICAL SKILLS</pattern>
+        <template>
+            <think>
+                <set name="strength">Analytical skills</set>
+            </think>
+            <srai>MY STRENGTH IS ANALYTICAL SKILLS</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PROGRAMMING</pattern>
+        <template>
+            <think>
+                <set name="strength">Programming</set>
+            </think>
+            <srai>MY STRENGTH IS PROGRAMMING</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NETWORKING</pattern>
+        <template>
+            <think>
+                <set name="strength">Networking</set>
+            </think>
+            <srai>MY STRENGTH IS NETWORKING</srai>
+        </template>
+    </category>
 
         <!-- Capture user's preference -->
         <category>
@@ -25,6 +57,53 @@
                     <set name="preference"><star></star></set>
                 </think>
                 <srai>JOB SUGGESTIONS</srai>
+            </template>
+        </category>
+        
+        <!-- Different types of answers for MY STRENGTH IS *-->
+        <category>
+            <pattern>BUSINESS OF IT</pattern>
+            <template>
+                <think>
+                    <set name="preference">Business of IT</set>
+                </think>
+                <srai>MY PREFERENCE IS BUSINESS OF IT</srai>
+            </template>
+        </category>
+         <category>
+            <pattern>CYBERSECURITY</pattern>
+            <template>
+                <think>
+                    <set name="preference">Cybersecurity</set>
+                </think>
+                <srai>MY PREFERENCE IS CYBERSECURITY</srai>
+            </template>
+        </category>
+         <category>
+            <pattern>SOFTWARE</pattern>
+            <template>
+                <think>
+                    <set name="preference">Software</set>
+                </think>
+                <srai>MY PREFERENCE IS SOFTWARE</srai>
+            </template>
+        </category>
+         <category>
+            <pattern>DATABASES</pattern>
+            <template>
+                <think>
+                    <set name="preference">Databases</set>
+                </think>
+                <srai>MY PREFERENCE IS DATABASES</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>COMPUTER HARDWARE</pattern>
+            <template>
+                <think>
+                    <set name="preference">Computer Hardware</set>
+                </think>
+                <srai>MY PREFERENCE IS COMPUTER HARDWARE</srai>
             </template>
         </category>
     </topic>
